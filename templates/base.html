@@ -46,12 +46,14 @@
 	<div class="container-fluid">	
 	  <div class="sidebar">
 		<div class="well">
+                        {% if LINKS %}
 			<h3>Blogroll</h3>
 			<ul>
 				{% for name, link in LINKS %}
 				<li><a href="{{ link }}">{{ name }}</a></li>
 				{% endfor %}
 			</ul>
+			{% endif %}
 			<div class="social">
 			<h3>Social</h3>
 			<ul>
