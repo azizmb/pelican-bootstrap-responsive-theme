@@ -66,37 +66,43 @@
 
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span3">
-	  {% if LINKS or SOCIAL %}
-          <div class="well sidebar-nav">
-	    {% if LINKS %}
-            <ul class="nav nav-list">
-              <li class="nav-header">Blogroll</li>
-	      {% for name, link in LINKS %}
-	      <li><a href="{{ link }}">{{ name }}</a></li>
-	      {% endfor %}
-            </ul>
-	    {% endif %}
-	    {% if SOCIAL %}
-            <ul class="nav nav-list social">
-              <li class="nav-header">Elsewhere</li>
-	      {% for name, link in SOCIAL %}
-	      <li><a href="{{ link }}">{{ name }}</a></li>
-	      {% endfor %}
-	    </ul>
-	    {% endif %}
-          </div><!--/.well -->
-	  {% endif %}
-        </div><!--/span-->
+	<div class="span1">&nbsp;</div>
+	<div class="span10">
+	  <div class="row-fluid">
+	    <div class="span3">
+	      {% if LINKS or SOCIAL %}
+              <div class="well sidebar-nav">
+		{% if LINKS %}
+		<ul class="nav nav-list">
+		  <li class="nav-header">Blogroll</li>
+		  {% for name, link in LINKS %}
+		  <li><a href="{{ link }}">{{ name }}</a></li>
+		  {% endfor %}
+		</ul>
+		{% endif %}
+		{% if SOCIAL %}
+		<ul class="nav nav-list social">
+		  <li class="nav-header">Elsewhere</li>
+		  {% for name, link in SOCIAL %}
+		  <li><a href="{{ link }}">{{ name }}</a></li>
+		  {% endfor %}
+		</ul>
+		{% endif %}
+              </div><!--/.well -->
+	      {% endif %}
+            </div><!--/span-->
 
-        <div class="span9">
-	  {% block indextitle %}
-	  <div class="page-header">
-	    <h1>{% block title %} {{ self.windowtitle() }} {% endblock %}</h1>
+            <div class="span9">
+	      {% block indextitle %}
+	      <div class="page-header">
+		<h1>{% block title %} {{ self.windowtitle() }} {% endblock %}</h1>
+	      </div>
+	      {% endblock %}
+	      {% block content %}{% endblock %}
+            </div><!--/span-->
+
 	  </div>
-	  {% endblock %}
-	  {% block content %}{% endblock %}
-        </div><!--/span-->
+	</div>
       </div><!--/row-->
 
       <hr>
