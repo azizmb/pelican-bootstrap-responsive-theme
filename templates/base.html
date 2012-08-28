@@ -1,67 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>{% block windowtitle %}{{ SITENAME }}{% endblock %}</title>
-	<meta name="description" content="">
-	<meta name="author" content="{{ AUTHOR }}">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block windowtitle %}{{ SITENAME }}{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="author" content="{{ AUTHOR }}">
 
-	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-	<!--[if lt IE 9]>
-		<script src="{{ SITEURL }}/theme/html5.js"></script>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+	<script src="{{ SITEURL }}/theme/html5.js"></script>
 	<![endif]-->
 
-	<!-- Le styles -->
-	<link href="{{ SITEURL }}/theme/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<style type="text/css">
-	  body {
-          padding-top: 60px;
-          padding-bottom: 40px;
-	  }
-	  .sidebar-nav {
-          padding: 9px 0;
-	  }
-	</style>
-	<link href="{{ SITEURL }}/theme/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-	<link href="{{ SITEURL }}/theme/local.css" rel="stylesheet">
-	<link href="{{ SITEURL }}/theme/pygments.css" rel="stylesheet">
-	{% include "analytics.html" %}
-	{% include "disqus.html" %}
-</head>
-<body>
-	{% include "facebook.html" %}
-	{% include "github.html" %}
-	<div class="navbar navbar-inverse navbar-fixed-top">
-	  <div class="navbar-inner">
-            <div class="container-fluid">
-              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-              </a>
-	      <a class="brand" href="{{ SITEURL }}/index.html">{{ SITENAME }}</a>
-              <div class="nav-collapse collapse">
-		<ul class="nav">
-		  {% for title, link in MENUITEMS %}
-		  <li><a href="{{ link }}">{{ title }}</a></li>
-		  {% endfor %}
-		  {% if DISPLAY_PAGES_ON_MENU %}
-		  {% for page in PAGES %}
-		  <li><a href="{{ SITEURL }}/pages/{{ page.url }}">{{ page.title }}</a></li>
-		  {% endfor %}
-		  {% endif %}
-		  {% for cat, null in categories %}
-		  <li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
-		  {% endfor %}
-		</ul>
-		<p class="navbar-text pull-right">
-		  <a class="navbar-link" href="{{ SITEURL }}/archives.html">[archives]</a>
-		  <a class="navbar-link" href="{{ SITEURL }}/tags.html">[tags]</a>
-		</p>
-              </div><!--/.nav-collapse -->
-            </div>
-	  </div>
+    <!-- Le styles -->
+    <link href="{{ SITEURL }}/theme/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+      padding-top: 60px;
+      padding-bottom: 40px;
+      }
+      .sidebar-nav {
+      padding: 9px 0;
+      }
+    </style>
+    <link href="{{ SITEURL }}/theme/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="{{ SITEURL }}/theme/local.css" rel="stylesheet">
+    <link href="{{ SITEURL }}/theme/pygments.css" rel="stylesheet">
+    {% include "analytics.html" %}
+    {% include "disqus.html" %}
+  </head>
+  <body>
+    {% include "facebook.html" %}
+    {% include "github.html" %}
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+	<div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+          </a>
+	  <a class="brand" href="{{ SITEURL }}/index.html">{{ SITENAME }}</a>
+          <div class="nav-collapse collapse">
+	    <ul class="nav">
+	      {% for title, link in MENUITEMS %}
+	      <li><a href="{{ link }}">{{ title }}</a></li>
+	      {% endfor %}
+	      {% if DISPLAY_PAGES_ON_MENU %}
+	      {% for page in PAGES %}
+	      <li><a href="{{ SITEURL }}/pages/{{ page.url }}">{{ page.title }}</a></li>
+	      {% endfor %}
+	      {% endif %}
+	      {% for cat, null in categories %}
+	      <li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+	      {% endfor %}
+	    </ul>
+	    <p class="navbar-text pull-right">
+	      <a class="navbar-link" href="{{ SITEURL }}/archives.html">[archives]</a>
+	      <a class="navbar-link" href="{{ SITEURL }}/tags.html">[tags]</a>
+	    </p>
+          </div><!--/.nav-collapse -->
 	</div>
+      </div>
+    </div>
 
 
     <div class="container-fluid">
@@ -108,11 +108,12 @@
       <hr>
 
       <footer>
-        <p>&copy; Company 2012</p>
+        <p>Powered by <a href="http://alexis.notmyidea.org/pelican/">Pelican</a></p>
+	<p>&copy; {{ AUTHOR }} 2012</p>
       </footer>
 
     </div><!--/.fluid-container-->
 
 
-</body>
+  </body>
 </html>
