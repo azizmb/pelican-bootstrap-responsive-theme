@@ -31,38 +31,8 @@
   <body>
     {% include "facebook.html" %}
     {% include "github.html" %}
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-	<div class="container-fluid">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-	    <span class="icon-bar"></span>
-	    <span class="icon-bar"></span>
-	    <span class="icon-bar"></span>
-          </a>
-	  <a class="brand" href="{{ SITEURL }}/index.html">{{ SITENAME }}</a>
-          <div class="nav-collapse collapse">
-	    <ul class="nav">
-	      {% for title, link in MENUITEMS %}
-	      <li><a href="{{ link }}">{{ title }}</a></li>
-	      {% endfor %}
-	      {% if DISPLAY_PAGES_ON_MENU %}
-	      {% for page in PAGES %}
-	      <li><a href="{{ SITEURL }}/pages/{{ page.url }}">{{ page.title }}</a></li>
-	      {% endfor %}
-	      {% endif %}
-	      {% for cat, null in categories %}
-	      <li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
-	      {% endfor %}
-	    </ul>
-	    <p class="navbar-text pull-right">
-	      <a class="navbar-link" href="{{ SITEURL }}/archives.html">[archives]</a>
-	      <a class="navbar-link" href="{{ SITEURL }}/tags.html">[tags]</a>
-	    </p>
-          </div><!--/.nav-collapse -->
-	</div>
-      </div>
-    </div>
-
+    
+    {% include "_header.html" %}
 
     <div class="container-fluid">
       <div class="row-fluid">
@@ -79,26 +49,7 @@
             </div><!--/span-->
 
 	    <div class="span3">
-	      {% if LINKS or SOCIAL %}
-              <div class="well sidebar-nav">
-		{% if LINKS %}
-		<ul class="nav nav-list">
-		  <li class="nav-header">Blogroll</li>
-		  {% for name, link in LINKS %}
-		  <li><a href="{{ link }}">{{ name }}</a></li>
-		  {% endfor %}
-		</ul>
-		{% endif %}
-		{% if SOCIAL %}
-		<ul class="nav nav-list social">
-		  <li class="nav-header">Elsewhere</li>
-		  {% for name, link in SOCIAL %}
-		  <li><a href="{{ link }}">{{ name }}</a></li>
-		  {% endfor %}
-		</ul>
-		{% endif %}
-              </div><!--/.well -->
-	      {% endif %}
+	      {% include "_sidebar.html" %}
             </div><!--/span-->
 
 	  </div>
