@@ -8,6 +8,10 @@ Apart from some design changes, I've updated the old theme to use the
 latest version of Bootstrap, and have also added the CSS and JS
 requried to make is responsive.
 
+## Screenshot ##
+
+![Screenshot](https://raw.github.com/azizmb/pelican-bootstrap-responsive-theme/master/screenshot.png)
+
 ## ToDo ##
 
 * Update older partials to use new partial name format, ie prepend
