@@ -1,3 +1,4 @@
 <a class="more" href="{{ SITEURL }}/{{ article.url }}">{{ article.date.strftime("On %d %b %Y at %H%M") }}</a>
 {% if article.author %}by <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>{% endif %}
 in <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+ | <a href="{{ SITEURL }}/{{ article.url }}#disqus_thread">Comments</a>
