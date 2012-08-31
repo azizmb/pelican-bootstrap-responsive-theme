@@ -1,4 +1,6 @@
-<img src="https://graph.facebook.com/{{ FB_ID }}/picture/?type=large" class="img-rounded">
+{% if AUTHOR_IMAGE %}
+<img src="{{ AUTHOR_IMAGE }}" class="img-rounded"/>
+{% endif %}
 
 {% include "_about.html" %}
 
