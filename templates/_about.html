@@ -1,5 +1,9 @@
-<img src="{{ AUTHOR_PHOTO }}"/>
-<h4>About</h4>
-<div>
-  {{ AUTHOR_ABOUT }}
-</div>
+{% if AUTHOR_PHOTO %}
+    <img src="{{ AUTHOR_PHOTO }}"/>
+{% endif %}
+{% if AUTHOR_ABOUT %}
+    <h4>About</h4>
+    <div>
+        {{ AUTHOR_ABOUT }}
+    </div>
+{% endif %}
